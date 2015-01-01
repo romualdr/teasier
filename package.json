@@ -1,6 +1,6 @@
 {
   "name": "teasier",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate random values & make testing easier",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "generate"
   ],
   "author": {
-    "name": "Romuald R. (DaFunix)",
+    "name": "Romuald R. (@romualdr)",
     "email": "dafunix@gmail.com"
   },
   "license": "MIT",
