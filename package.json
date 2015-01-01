@@ -1,0 +1,24 @@
+{
+  "name": "teasier",
+  "version": "0.1.0",
+  "description": "Generate random values & make testing easier",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha -u tdd -t 5000 -R spec"
+  },
+  "keywords": [
+    "test",
+    "random",
+    "values",
+    "generate"
+  ],
+  "author": {
+    "name": "Romuald R. (DaFunix)",
+    "email": "dafunix@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.0.4"
+  }
+}
