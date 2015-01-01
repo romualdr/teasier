@@ -13,12 +13,18 @@
     "generate"
   ],
   "author": {
-    "name": "Romuald R. (@romualdr)",
-    "email": "dafunix@gmail.com"
+    "name": "Romuald R. (DaFunix)",
+    "email": "dafunix@gmail.com",
+    "url": "https://github.com/romualdr"
   },
   "license": "MIT",
   "devDependencies": {
     "mocha": "^1.21.4",
     "should": "^4.0.4"
+  },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/romualdr/teasier.git"
   }
 }
