@@ -16,6 +16,11 @@ suite('Helpers', function () {
 			power.should.eql(0);
 			done();
 		});
+		test('Should find power with negative value', function (done) {
+			var power = tester.helpers.getPower(-100);
+			power.should.eql(2);
+			done();
+		});
 		test('Should find power === 1', function (done) {
 			var power = tester.helpers.getPower(10);
 			power.should.eql(1);
@@ -147,6 +152,29 @@ suite('Generators', function () {
 			}
 			done();
 		});
+		test('Should generate a random number between -100 and -100', function (done) {
+			var nb = tester.generate.integer(-100, -100);
+			(nb === -100).should.be.true;
+			done();
+		});
+		test('Should generate a random number between -100 and -99', function (done) {
+			var nb = tester.generate.integer(-100, -99);
+			(nb === -100).should.be.true;
+			done();
+		});
+		test('Should generate negative numbers', function (done) {
+			__DEBUG__ = true;
+			for (var i = 0; i < 1000; ++i) {
+				var nb = tester.generate.integer(-100, 0);
+				if (nb < -100 || nb > 0) {
+					console.log(nb);
+					process.exit(0);
+				}
+				(nb >= -100).should.be.true;
+				(nb < 0).should.be.true;
+			}
+			done();
+		});
 	});
 
 	suite('generate.name', function () {
@@ -213,12 +241,26 @@ suite('Generators', function () {
 			}
 			done();
 		});
+		test('Should generate a word', function (done) {
+			for (var i = 0; i < 1000; ++i) {
+				var word = tester.generate.word();
+				(typeof word).should.eql('string');
+				word.length.should.not.eql(0);
+			}
+			done();
+		});
 	});
 
 	suite('generate paragraph', function () {
 		test('Should generate a paragraph', function (done) {
 			var par = tester.generate.paragraph(50, 50);
 			par.length.should.eql(50);
+			done();
+		});
+		test('Should generate a paragraph', function (done) {
+			var par = tester.generate.paragraph();
+			(typeof par).should.eql('string');
+			par.length.should.not.eql(0);
 			done();
 		});
 	});
